@@ -1,0 +1,304 @@
+@charset "UTF-8";
+body {
+  font-family: "";
+}
+
+.u-desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .u-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .u-mobile {
+    display: none;
+  }
+}
+
+/* リキッドレイアウト対応 */
+html {
+  font-size: 16px;
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 4.2666666667vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 1.4545454545vw;
+  }
+}
+@media (min-width: 1100px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* pcの電話番号発信対応 */
+@media screen and (min-width: 768px) {
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
+
+/* ホバー */
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+@media screen and (min-width: 768px) {
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="10" /></filter></svg>#filter');
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+/* フォームリセット */
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.floating-banner {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  max-width: 20rem;
+  position: fixed;
+  bottom: 25.6px;
+  bottom: 1.6rem;
+  right: 51.2px;
+  right: 3.2rem;
+  z-index: 9999;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+.floating-banner_img:hover {
+  opacity: 0.8;
+}
+
+.floating-banner_img {
+  width: 100%;
+  -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+          box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.round_btn {
+  display: block;
+  position: relative;
+  width: 32px;
+  width: 2rem;
+  height: 32px;
+  height: 2rem;
+  border: 1px solid #333;
+  /* 枠の調整 */
+  border-radius: 50%;
+  /* 丸みの度合い */
+  background: #FFFFFF;
+  /* ボタンの色 */
+  -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+          box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.round_btn::before, .round_btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  /* 棒の幅（太さ） */
+  height: 19.2px;
+  height: 1.2rem;
+  /* 棒の高さ */
+  background: #000;
+  /* バツ印の色 */
+}
+
+.round_btn::before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.round_btn::after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* checkbox non-display */
+.checkbox {
+  display: none;
+}
+
+/* close button */
+.action-close .close-btn {
+  position: absolute;
+  right: -35px;
+}
+
+.action-close #close:checked ~ .close-btn {
+  display: none;
+}
+
+.action-close #close:checked ~ .box {
+  display: none;
+}
+
+.footer {
+  background-color: brown;
+  height: 10vh;
+}
+
+.header {
+  background-color: skyblue;
+  height: 10vh;
+}
+
+.inner {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  .inner {
+    max-width: 1150px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.test {
+  font-size: 32px;
+  font-size: 2rem;
+  background-color: #111;
+  color: #fff;
+}
+
+.content {
+  background-color: yellow;
+  height: 100vh;
+}
+/*# sourceMappingURL=styles.css.map */
